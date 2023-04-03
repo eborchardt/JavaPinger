@@ -6,6 +6,7 @@ public class JavaPinger {
     public static void runSystemCommand(String command) {
 
         try {
+            System.out.println("Executing command: " + command);
             Process p = Runtime.getRuntime().exec(command);
             BufferedReader inputStream = new BufferedReader(
                     new InputStreamReader(p.getInputStream()));
