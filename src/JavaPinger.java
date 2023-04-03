@@ -29,7 +29,7 @@ public class JavaPinger {
             } else {
             String ip = args[0];
             String qty = args[1];
-            runSystemCommand("ping -n " + qty + " " + ip);
+            runSystemCommand("ping -c " + qty + " " + ip);
             }
     }
 }
