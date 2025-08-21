@@ -11,8 +11,8 @@ public class JavaPinger {
             BufferedReader inputStream = new BufferedReader(
                     new InputStreamReader(p.getInputStream()));
 
-            String s = "";
             // reading output stream of the command
+            String s;
             while ((s = inputStream.readLine()) != null) {
                 System.out.println(s);
             }
@@ -29,7 +29,13 @@ public class JavaPinger {
             } else {
             String ip = args[0];
             String qty = args[1];
-            runSystemCommand("ping -c " + qty + " " + ip);
+            // Use -n for Windows, -c for Linux/Mac
+            String osName = System.getProperty("os.name").toLowerCase();
+            if (osName.contains("win")) {
+                runSystemCommand("ping -n " + qty + " " + ip);
+            } else {
+                runSystemCommand("ping -c " + qty + " " + ip);
+            }
             }
     }
 }
