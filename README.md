@@ -32,6 +32,8 @@ java .\src\JavaPinger.class 127.0.0.1 10
 ```
 
 ## Features
+- Pure Java implementation (no system commands)
 - Cross-platform support (Windows, Linux, macOS)
 - Simple command-line interface
 - Displays ping results in real-time
+- Provides ping statistics (packets sent/received, min/max/avg times)
